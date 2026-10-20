@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11152d">
+  <title>KWL | اختبر فهمك</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span class="brand-mark">K<span>W</span>L</span>
+      <span class="brand-caption">LEARNING LAB</span>
+    </a>
+
+    <div class="top-pill">
+      <span class="live-dot"></span>
+      مساحة التعلّم التفاعلية
+    </div>
+  </header>
+
+  <main class="page-wrap">
+
+    <!-- القسم الرئيسي -->
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span>✦</span>
+          استراتيجيات التدريس
+        </div>
+
+        <h1>
+          اختبر فهمك<br>
+          <span>لاستراتيجية KWL</span>
+        </h1>
+
+        <p>
+          خمسة أسئلة قصيرة تساعدك تراجع الدرس،
+          وتكتشف مدى فهمك لجدول التعلّم.
+        </p>
+
+        <div class="hero-meta">
+          <span><b class="meta-icon">◷</b> ٣–٥ دقائق</span>
+          <span><b class="meta-icon">✧</b> ٥ أسئلة متنوعة</span>
+        </div>
+      </div>
+
+      <!-- رسمة توضيحية -->
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+
+        <div class="floating-card card-k">
+          <strong>K</strong>
+          <small>أعرف</small>
+        </div>
+
+        <div class="floating-card card-w">
+          <strong>W</strong>
+          <small>أريد أن أعرف</small>
+        </div>
+
+        <div class="floating-card card-l">
+          <strong>L</strong>
+          <small>تعلّمت</small>
+        </div>
+
+        <div class="brain-bubble">✦</div>
+        <div class="art-label">KNOW · WANT · LEARN</div>
+      </div>
+    </section>
+
+    <!-- صندوق الاختبار -->
+    <section class="quiz-shell" id="quizShell">
+
+      <div class="quiz-top">
+        <div>
+          <span class="section-kicker">رحلة المراجعة</span>
+          <h2 id="questionCounter">السؤال ١ من ٥</h2>
+        </div>
+
+        <div class="score-chip">
+          النقاط <strong id="liveScore">٠</strong>
+        </div>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <div id="questionArea" class="question-area" aria-live="polite">
+        <!-- الأسئلة تظهر هنا عن طريق JavaScript -->
+      </div>
+
+      <div class="quiz-footer">
+        <span class="keyboard-hint">
+          خدي وقتك وفكّري قبل الاختيار ✨
+        </span>
+
+        <button class="primary-btn" id="nextBtn" disabled>
+          تأكيد الإجابة <span>←</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- شاشة النتيجة -->
+    <section class="result-card hidden" id="resultCard" aria-live="polite">
+      <div class="result-sparkle">✦</div>
+
+      <span class="section-kicker">وصلتي للنهاية</span>
+
+      <h2 id="resultTitle">أحسنتِ!</h2>
+
+      <p id="resultMessage"></p>
+
+      <div class="result-score">
+        <strong id="finalScore">٠/٤</strong>
+        <span>نتيجتك النهائية</span>
+      </div>
+
+      <div class="result-actions">
+        <button class="primary-btn" id="restartBtn">
+          إعادة الاختبار <span>↻</span>
+        </button>
+
+        <button class="secondary-btn" id="reviewBtn">
+          مراجعة الإجابات
+        </button>
+      </div>
+
+      <div id="reviewArea" class="review-area hidden"></div>
+    </section>
+
+    <footer class="footer">
+      <span>KWL LEARNING LAB</span>
+      <span>تعلّم • فكّر • اكتشف</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

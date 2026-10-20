@@ -1,0 +1,731 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #0d1023;
+  --panel: rgba(23, 28, 56, 0.88);
+  --text: #f7f7ff;
+  --muted: #a6aecb;
+  --purple: #a88bff;
+  --mint: #7ff0cf;
+  --pink: #ff9fcb;
+  --line: rgba(255, 255, 255, 0.11);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background: var(--bg);
+  font-family: 'Cairo', sans-serif;
+  overflow-x: hidden;
+
+  background-image:
+    radial-gradient(
+      ellipse at 15% 10%,
+      rgba(112, 84, 216, 0.17),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 85% 48%,
+      rgba(60, 204, 180, 0.09),
+      transparent 35%
+    );
+}
+
+button {
+  font: inherit;
+}
+
+.ambient {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.ambient-one {
+  width: 260px;
+  height: 260px;
+  background: #8b66ff;
+  top: 20%;
+  right: -100px;
+}
+
+.ambient-two {
+  width: 240px;
+  height: 240px;
+  background: #42d9ba;
+  bottom: 2%;
+  left: -110px;
+}
+
+/* شريط العنوان */
+
+.topbar {
+  width: min(1120px, calc(100% - 40px));
+  margin: auto;
+  padding: 25px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-mark {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.brand-mark span {
+  color: var(--mint);
+}
+
+.brand-caption {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+  direction: ltr;
+}
+
+.top-pill {
+  border: 1px solid var(--line);
+  color: #c9cee5;
+  border-radius: 100px;
+  padding: 8px 14px;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 7px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 12px var(--mint);
+}
+
+/* المحتوى الرئيسي */
+
+.page-wrap {
+  width: min(1050px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 340px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 30px;
+  padding: 28px 18px 44px;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--mint);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  border: 1px solid rgba(127, 240, 207, 0.2);
+  background: rgba(127, 240, 207, 0.06);
+  border-radius: 100px;
+}
+
+.eyebrow span {
+  color: var(--pink);
+}
+
+h1 {
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.35;
+  letter-spacing: -0.8px;
+  margin: 18px 0 10px;
+  font-weight: 900;
+}
+
+h1 span {
+  color: var(--purple);
+}
+
+.hero-copy p {
+  max-width: 490px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 2;
+  margin: 0;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  color: #c5cbe4;
+  font-size: 12px;
+}
+
+.meta-icon {
+  color: var(--mint);
+  margin-left: 5px;
+  font-size: 17px;
+}
+
+/* الرسم التوضيحي */
+
+.hero-art {
+  height: 270px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(168, 139, 255, 0.24);
+  border-radius: 50%;
+  transform: rotate(-24deg);
+}
+
+.orbit-a {
+  width: 245px;
+  height: 165px;
+}
+
+.orbit-b {
+  width: 205px;
+  height: 240px;
+  transform: rotate(42deg);
+  border-color: rgba(127, 240, 207, 0.18);
+}
+
+.floating-card {
+  position: absolute;
+  width: 125px;
+  padding: 15px 14px;
+  border-radius: 18px;
+  background: rgba(31, 38, 73, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.24);
+  transform: rotate(-7deg);
+}
+
+.floating-card strong {
+  display: block;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.floating-card small {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.card-k {
+  top: 22px;
+  right: 12px;
+  color: var(--mint);
+}
+
+.card-w {
+  bottom: 27px;
+  right: 34px;
+  color: var(--pink);
+  transform: rotate(6deg);
+}
+.card-l {
+  top: 82px;
+  left: 5px;
+  color: var(--purple);
+  transform: rotate(-11deg);
+}
+
+.brain-bubble {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 28px;
+  font-size: 36px;
+  color: #10152a;
+  background: linear-gradient(135deg, var(--mint), #b7ffe9);
+  box-shadow: 0 0 55px rgba(127, 240, 207, 0.2);
+  transform: rotate(9deg);
+}
+
+.art-label {
+  position: absolute;
+  bottom: 0;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #747d9f;
+  direction: ltr;
+}
+
+/* صندوق الاختبار */
+
+.quiz-shell,
+.result-card {
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--panel);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
+}
+
+.quiz-shell {
+  padding: 30px clamp(20px, 4vw, 42px) 26px;
+}
+
+.quiz-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.quiz-top h2 {
+  margin: 5px 0 0;
+  font-size: 21px;
+}
+
+.score-chip {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px 14px;
+  border-radius: 13px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.score-chip strong {
+  color: var(--mint);
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+/* شريط التقدم */
+
+.progress-track {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 22px 0 28px;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 20%;
+  background: linear-gradient(90deg, var(--purple), var(--mint));
+  border-radius: inherit;
+  transition: width 0.4s ease;
+}
+
+/* نص السؤال */
+
+.question-type {
+  display: inline-flex;
+  padding: 5px 10px;
+  color: var(--purple);
+  background: rgba(168, 139, 255, 0.1);
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.question-title {
+  font-size: clamp(17px, 2.5vw, 22px);
+  line-height: 1.9;
+  margin: 0 0 19px;
+  font-weight: 800;
+}
+
+/* الاختيارات */
+
+.options {
+  display: grid;
+  gap: 11px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: right;
+  width: 100%;
+
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--text);
+  border-radius: 15px;
+  padding: 13px 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.option:hover {
+  border-color: rgba(168, 139, 255, 0.65);
+  background: rgba(168, 139, 255, 0.07);
+  transform: translateY(-1px);
+}
+
+.option.selected {
+  border-color: var(--purple);
+  background: rgba(168, 139, 255, 0.13);
+  box-shadow: 0 0 0 2px rgba(168, 139, 255, 0.08);
+}
+
+.option.correct {
+  border-color: var(--mint);
+  background: rgba(127, 240, 207, 0.1);
+}
+
+.option.wrong {
+  border-color: var(--pink);
+  background: rgba(255, 159, 203, 0.09);
+}
+
+.option:disabled {
+  cursor: default;
+}
+
+.option-letter {
+  flex: 0 0 31px;
+  width: 31px;
+  height: 31px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #c5cbe4;
+  background: rgba(255, 255, 255, 0.07);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.option.selected .option-letter {
+  color: #17152c;
+  background: var(--purple);
+}
+
+.option-text {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.option-mark {
+  color: var(--mint);
+  font-size: 18px;
+}
+
+/* رسالة تصحيح الإجابة */
+
+.feedback {
+  margin-top: 14px;
+  padding: 12px 15px;
+  border-radius: 13px;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.feedback.good {
+  color: var(--mint);
+  background: rgba(127, 240, 207, 0.08);
+  border: 1px solid rgba(127, 240, 207, 0.18);
+}
+
+.feedback.bad {
+  color: #ffc0d9;
+  background: rgba(255, 159, 203, 0.07);
+  border: 1px solid rgba(255, 159, 203, 0.18);
+}
+
+/* أزرار التحكم */
+
+.quiz-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.keyboard-hint {
+  color: #7f88a9;
+  font-size: 11px;
+}
+
+.primary-btn,
+.secondary-btn {
+  border: 0;
+  border-radius: 13px;
+  padding: 12px 20px;
+  font-weight: 800;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.primary-btn {
+  background: var(--mint);
+  color: #10182a;
+  box-shadow: 0 8px 25px rgba(127, 240, 207, 0.13);
+}
+.primary-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(127, 240, 207, 0.22);
+}
+
+.primary-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.primary-btn span {
+  margin-right: 10px;
+  font-size: 17px;
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* شاشة النتيجة */
+
+.result-card {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 44px 25px;
+  margin-top: 0;
+}
+
+.result-card::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(168, 139, 255, 0.13);
+  filter: blur(55px);
+  top: -100px;
+  left: calc(50% - 120px);
+}
+
+.result-sparkle {
+  position: relative;
+  margin: 0 auto 10px;
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  background: rgba(127, 240, 207, 0.12);
+  color: var(--mint);
+  font-size: 32px;
+}
+
+.result-card h2 {
+  position: relative;
+  font-size: 32px;
+  margin: 8px 0;
+}
+
+.result-card p {
+  position: relative;
+  color: var(--muted);
+  margin: 0 auto;
+  max-width: 480px;
+  line-height: 2;
+  font-size: 13px;
+}
+
+.result-score {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 22px auto;
+}
+
+.result-score strong {
+  color: var(--mint);
+  font-size: 44px;
+}
+
+.result-score span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* مراجعة الإجابات */
+
+.review-area {
+  text-align: right;
+  max-width: 700px;
+  margin: 30px auto 0;
+}
+
+.review-item {
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+
+.review-item h3 {
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 0 0 5px;
+}
+
+.review-item p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* أسفل الصفحة */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  color: #687292;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  padding: 26px 4px 30px;
+}
+
+.footer span:first-of-type {
+  direction: ltr;
+}
+
+/* تنسيق الموبايل */
+
+@media (max-width: 720px) {
+  .topbar {
+    width: calc(100% - 28px);
+    padding: 18px 0;
+  }
+
+  .top-pill {
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+
+  .page-wrap {
+    width: calc(100% - 26px);
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 25px 4px 30px;
+    gap: 0;
+  }
+
+  .hero-copy {
+    text-align: center;
+  }
+
+  .hero-copy p {
+    margin: auto;
+    font-size: 13px;
+  }
+
+  .hero-meta {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 39px;
+  }
+
+  .hero-art {
+    height: 235px;
+    margin-top: 4px;
+  }
+
+  .quiz-shell {
+    border-radius: 22px;
+    padding: 23px 17px 19px;
+  }
+
+  .quiz-top h2 {
+    font-size: 18px;
+  }
+
+  .question-title {
+    font-size: 17px;
+  }
+
+  .option {
+    padding: 11px;
+    gap: 9px;
+  }
+
+  .option-text {
+    font-size: 12px;
+  }
+
+  .quiz-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .keyboard-hint {
+    text-align: center;
+    order: 2;
+  }
+
+  .quiz-footer .primary-btn {
+    width: 100%;
+  }
+
+  .footer {
+    letter-spacing: 0.5px;
+  }
+}
